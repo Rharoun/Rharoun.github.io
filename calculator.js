@@ -5,7 +5,7 @@ button2.addEventListener('click', function(){
                 let n1 = parseFloat(document.querySelector('.input1').value);
                 let n2 = parseFloat(document.querySelector('.input2').value);
                 
-                let oper = document.querySelector('.operators').value;
+                let oper = document.querySelector('.buttons').value;
                 
                 if(oper === '+')
                 {
