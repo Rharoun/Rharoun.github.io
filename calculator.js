@@ -33,84 +33,77 @@ button2.addEventListener('click', function(){
 })
 
 
+console.log(localStorage)
+const mode1 = localStorage.getItem('mode')
+
 button.addEventListener("click", function () {
-    const elements = document.querySelectorAll("body, .theme")
-   for (let i = 0; i < elements.length; i++) {
-        const element = elements[i];
-        element.classList.toggle("bg-dark")
-        element.classList.toggle("text-white")
+    const mode1 = localStorage.getItem('mode')
+    if(mode1 == 0){
+        localStorage.removeItem('mode', 0)
+        localStorage.setItem('mode', 1)
     }
+    if(mode1 == 1){
+        localStorage.removeItem('mode', 1)
+        localStorage.setItem('mode', 0)
+    }
+    console.log(localStorage)
  })
-
-button.addEventListener("click", function () {
-    const elements = document.querySelectorAll(".light-switch")
-    for (let i = 0; i < elements.length; i++) {
+ button.addEventListener("click", function () {
+ const elements = document.querySelectorAll("body, .theme")
+   for (let i = 0; i < elements.length; i++) {
+    const mode1 = localStorage.getItem('mode')
         const element = elements[i];
-        element.classList.toggle("btn-dark")
-        element.classList.toggle("btn-light")
-        element.classList.toggle("text-white")
-        element.classList.toggle("text-dark")
+        if(mode1 == 1){
+            element.classList.add("bg-dark")
+            element.classList.add("text-white")
+        }
+        if(mode1 == 0){
+            element.classList.remove("bg-dark")
+            element.classList.remove("text-white")
+        }
     }
 })
 
-button.addEventListener("click", function () {
-    const elements = document.querySelectorAll(".switch")
-    for (let i = 0; i < elements.length; i++) {
+const elements = document.querySelectorAll("body, .theme")
+   for (let i = 0; i < elements.length; i++) {
+    const mode1 = localStorage.getItem('mode')
         const element = elements[i];
-        element.classList.toggle("text-white")
-        element.classList.toggle("text-dark")
-        element.classList.toggle("bg-light")
-        element.classList.toggle("bg-dark")
+        if(mode1 == 1){
+            element.classList.add("bg-dark")
+            element.classList.add("text-white")
+        }
+        if(mode1 == 0){
+            element.classList.remove("bg-dark")
+            element.classList.remove("text-white")
+        }
     }
-})
 
-////////
-
-let toggleSwitch = new Boolean(true) ;
-
-const backgroundToggle = function () {
-    const elements = document.querySelectorAll("body, .theme")
-    if(toggleSwitch = false){
+    button.addEventListener("click", function () {
+        const elements = document.querySelectorAll(".light-switch")
         for (let i = 0; i < elements.length; i++) {
             const element = elements[i];
-            element.classList.toggle("bg-dark")
-            element.classList.toggle("text-white")
+            const mode1 = localStorage.getItem('mode')
+                if(mode1 == 1){
+                    element.classList.add("btn-dark")
+                    element.classList.add("btn-primary-outline")
+                }
+                if(mode1 == 0){
+                    element.classList.remove("btn-dark")
+                    element.classList.remove("btn-primary-outline")
+                }
         }
-        } else{
-            element.classList.toggle("bg-dark")
-            element.classList.toggle("text-white")
-        }
-}
-
-button.addEventListener("click", function () {
-    if(toggleSwitch = true){
-        toggleSwitch = false ;
-    } else {
-        toggleSwitch = true ; 
+    })
+    
+    const elements1 = document.querySelectorAll(".light-switch")
+    for (let i = 0; i < elements1.length; i++) {
+        const element = elements1[i];
+        const mode1 = localStorage.getItem('mode')
+            if(mode1 == 1){
+                element.classList.add("btn-dark")
+                element.classList.add("btn-primary-outline")
+            }
+            if(mode1 == 0){
+                element.classList.remove("btn-dark")
+                element.classList.remove("btn-primary-outline")
+            }
     }
-})
-
-const buttonToggle = function () {
-    const elements = document.querySelectorAll(".light-off")
-    for (let i = 0; i < elements.length; i++) {
-        const element = elements[i];
-        element.classList.toggle("btn-dark")
-        element.classList.toggle("btn-light")
-        element.classList.toggle("text-white")
-        element.classList.toggle("text-dark")
-    }
-}
-
-const switchToggle = function () {
-    const elements = document.querySelectorAll(".switch")
-    for (let i = 0; i < elements.length; i++) {
-        const element = elements[i];
-        element.classList.toggle("text-white")
-        element.classList.toggle("text-dark")
-        element.classList.toggle("bg-light")
-        element.classList.toggle("bg-dark")
-    }
-}
-//let switchTest = JSON.parse(localStorage.setItem(toggleSwitch)); 
-
-if (toggleSwitch = true){backgroundToggle()} ;
