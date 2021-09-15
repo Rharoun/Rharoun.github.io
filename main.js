@@ -2,8 +2,14 @@ const button = document.querySelector(".light-switch");
 console.log(localStorage)
 const mode1 = localStorage.getItem('mode')
 
+
 button.addEventListener("click", function () {
     const mode1 = localStorage.getItem('mode')
+    
+    if(localStorage.length == 0){
+        localStorage.setItem('mode', 0)
+    }
+    
     if(mode1 == 0){
         localStorage.removeItem('mode', 0)
         localStorage.setItem('mode', 1)
@@ -13,6 +19,8 @@ button.addEventListener("click", function () {
         localStorage.setItem('mode', 0)
     }
     console.log(localStorage)
+
+
  })
  button.addEventListener("click", function () {
  const elements = document.querySelectorAll("body, .theme")
