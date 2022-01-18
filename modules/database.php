@@ -1,6 +1,6 @@
 <?php
 $host = '127.0.0.1';
-$db   = 'rharoun';
+$db   = 'portfolio';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
@@ -14,7 +14,7 @@ $options = [
 
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
-    include_once ('../contact/Category.php');
+    include_once ('classes/project.php');
 } catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }

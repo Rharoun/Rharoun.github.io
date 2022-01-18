@@ -1,34 +1,39 @@
 <!DOCTYPE html>
+<?php 
+$conn = mysqli_connect('localhost', 'root', '', 'portfolio');
+if (!$conn){
+    echo 'connection error' . mysqli_connect_error();
+}
+$sql = ("SELECT * FROM projecten ORDER BY id"); 
+
+$result = mysqli_query($conn, $sql);
+
+$projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+?>
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>Portofolio Ramy Haroun</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
-    <header>
-        <nav class="navbar navbar-dark bg-dark p-1 theme">
-            <div class="row">
-                <div class="btn-1">
-                    <a type="button" class="nav-link" href="index.html">Home</a>
-                    <a type="button" class="nav-link" href="info.html">Info</a>
-                    <a type="button" class="nav-link" href="skills.html">Skills</a>
-                    <a type="button" class="nav-link" href="contact.html">Contact</a>
-                    <a type="button" class="nav-link" href="secret.html">Calculator</a>
-                    <a type="button" class="nav-link" href="game.html">Game</a>
-                </div>
-                    <button type="button" class="btn btn-dark btn-lg light-switch btn-1 switch-btn text-white">Switch Mode</button>
-            </div>
-        </nav>
-    </header>
+    <?php
+    include_once('default/menu.php');
+    ?>
     <body class="background-2 bg-dark">
         <h1 class="text-center size">skills</h1>
         <br>
         <br>
-        <div class="row">
-            <img class="man" src="images/Naamloos.png" width="500" height="300">
-            <h3 class="text-1"><= Dit was een van mijn projecten<br>
-                een bloemen site
-            </h3>
+        <div class="row ">
+        <?php
+             foreach ($projects as $project) : ?>
+            <div class="card text-white bg-secondary mb-3 card-group" style="max-width: 21rem;  margin: 0 auto; float: none; margin-bottom: 10px;">
+            <div class="card-body">
+            <h5 class="card-title"><?= $project["name"]?></h5>
+            <img class="card-img" src= "<?=$project["image"]?>">
+             <h5 class="card-title"><?= $project["project"]?></h5>
+            </div>
+        </div><?php endforeach?>
         </div>
         <br>
         <br>
@@ -69,5 +74,5 @@
             <a class="text-info" href="https://mdbootstrap.com/">Ramy Haroun</a>
           </div>
     </footer>
-    <script src="main.js"></script> 
+    <script src="js/main.js"></script> 
 </html>

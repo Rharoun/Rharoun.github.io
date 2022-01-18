@@ -2,22 +2,11 @@
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Boter Kaas eieren</title>
-    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="css/game.css">
   </head>
-  <header>
-    <nav class="navbar navbar-dark bg-dark p-1 theme">
-      <div class="row">
-          <div class="btn-1">
-              <a class="nav-link" href="index.html">Home</a>
-          </div>
-              <a class="nav-link" href="info.html">Info</a>
-              <a class="nav-link" href="skills.html">Skills</a>
-              <a class="nav-link" href="contact.html">Contact</a>
-              <a class="nav-link" href="secret.html">Calculator</a>
-              <a class="nav-link" href="game.html">Game</a>
-      </div>
-  </nav>
-</header>
+  <?php
+    include_once('default/menu.php');
+    ?>
   <body class="background align-items-center">
     <h1 class="text-center size text-dark">tik-tak-toe</h1>
     <main>
@@ -66,6 +55,6 @@
     </main>
     <div></div>
     <button class="reset-btn">reset</button>
-    <script type="module" src="game.js"></script>
+    <script type="module" src="js/game.js"></script>
   </body>
 </html>

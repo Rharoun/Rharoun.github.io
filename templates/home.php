@@ -3,23 +3,11 @@
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>Portofolio Ramy Haroun</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
-    <header>
-        <nav class="navbar navbar-dark bg-dark p-1 theme">
-            <div class="row">
-                <div class="btn-1">
-                    <a type="button" class="nav-link" href="index.html">Home</a>
-                    <a type="button" class="nav-link" href="info.html">Info</a>
-                    <a type="button" class="nav-link" href="skills.html">Skills</a>
-                    <a type="button" class="nav-link" href="contact.html">Contact</a>
-                    <a type="button" class="nav-link" href="secret.html">Calculator</a>
-                    <a type="button" class="nav-link" href="game.html">Game</a>
-                </div>
-                    <button type="button" class="btn btn-dark btn-lg light-switch btn-1 switch-btn text-white">Switch Mode</button>
-            </div>
-        </nav>
-    </header>
+    <?php
+    include_once('default/menu.php');
+    ?>
     <body class="background bg-dark">
         <div class="container">
             <div class="row">
@@ -44,5 +32,5 @@
             <a class="text-info" href="https://mdbootstrap.com/">Ramy Haroun</a>
           </div>
     </footer>
-    <script src="main.js"></script> 
+    <script src="js/main.js"></script> 
 </html>
